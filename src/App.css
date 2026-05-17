@@ -1,0 +1,5 @@
+/* We will place component-specific global styles here if needed, or just rely on CSS modules/components. */
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}

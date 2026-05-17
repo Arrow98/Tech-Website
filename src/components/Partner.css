@@ -1,0 +1,216 @@
+/* ============================================
+   PARTNER / FAQ SECTION (split layout)
+   ============================================ */
+.partner-section {
+  position: relative;
+  background-color: #3f7fa6; /* Matches the exact blue from the screenshot */
+  color: white;
+  min-height: 700px;
+  display: flex;
+  overflow: hidden;
+}
+
+/* LEFT SIDE - Absolute Background Image */
+.partner-bg-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  z-index: 1;
+}
+
+.partner-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center left;
+}
+
+/* Floating Client Review Card */
+.client-review-card {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  color: #1e293b;
+}
+
+.review-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.review-avatars img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -12px;
+  object-fit: cover;
+}
+
+.review-avatars img:first-child {
+  margin-left: 0;
+}
+
+.review-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.review-count {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.review-stars {
+  display: flex;
+  gap: 2px;
+}
+
+
+/* RIGHT SIDE - Content Container */
+.partner-container {
+  display: flex;
+  justify-content: flex-end; /* Align content to the right side of the container */
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}
+
+.partner-content {
+  width: 55%; /* Matches the remaining width not taken by the image */
+  padding: 120px 0 120px 60px; /* Padding left creates the gap between image and text */
+}
+
+/* Typography */
+.partner-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 16px;
+}
+
+.partner-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 40px;
+  line-height: 1.25;
+}
+
+.partner-title .text-faded {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ACCORDION */
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion-item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: #1e293b;
+  cursor: pointer;
+  background: white;
+  transition: all 0.2s;
+}
+
+.accordion-header h4 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.accordion-item.active .accordion-header {
+  background: #5b9bc6; /* Lighter blue for active header */
+  color: white;
+}
+
+.accordion-body-wrapper {
+  overflow: hidden;
+}
+
+.accordion-body {
+  padding: 20px 24px 24px 24px;
+  background: white;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .partner-title {
+    font-size: 2.2rem;
+  }
+  .partner-content {
+    padding: 80px 0 80px 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .partner-section {
+    flex-direction: column;
+  }
+  .partner-bg-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+  .client-review-card {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+  }
+  .partner-container {
+    justify-content: center;
+  }
+  .partner-content {
+    width: 100%;
+    padding: 80px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .partner-title {
+    font-size: 1.8rem;
+  }
+  .accordion-header {
+    padding: 16px;
+  }
+  .accordion-header h4 {
+    font-size: 0.85rem;
+    padding-right: 12px;
+  }
+  .accordion-body {
+    padding: 16px;
+  }
+}

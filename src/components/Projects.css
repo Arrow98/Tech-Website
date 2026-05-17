@@ -1,0 +1,189 @@
+.projects.bg-dark {
+  background-color: #1a1a1a; /* Very dark gray matching screenshot */
+  padding: 100px 0;
+  overflow: hidden; /* prevents horizontal scroll on the entire page */
+}
+
+.projects-header {
+  margin-bottom: 60px;
+}
+
+.projects-subtitle {
+  color: #4da6da; /* The bright blue from the screenshot */
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.projects-header .title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.projects-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #8c8c8c;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.projects-container-wide {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: clamp(1rem, 5vw, max(1.5rem, calc((100vw - 1200px) / 2)));
+}
+
+.projects-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-right: 2rem; /* Buffer on the right */
+  padding-bottom: 40px; /* Space for hover effects and shadow */
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+  margin-left: -100px;
+}
+
+.projects-slider::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari/Opera */
+}
+
+.project-card {
+  flex: 0 0 calc(33.333% - 16px); /* 3 cards on screen */
+  min-width: 340px;
+  max-width: 380px;
+  height: 480px;
+  border-radius: 20px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card-top-action {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #54a9df;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.project-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 80px 24px 24px 24px;
+  background: linear-gradient(to top, rgba(15, 20, 30, 0.95) 0%, rgba(15, 20, 30, 0.7) 40%, transparent 100%);
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Defaulting the second card to ALWAYS show hover state, like the screenshot */
+.project-card:nth-child(2) .project-card-top-action,
+.project-card:hover .project-card-top-action {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.project-card:nth-child(2) .project-card-overlay,
+.project-card:hover .project-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card-overlay h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.project-card-overlay p {
+  font-size: 0.85rem;
+  color: #aebfd1;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.project-explore-btn {
+  background-color: #5ab2e5; /* The specific light blue from screenshot */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px 8px 24px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.project-explore-btn:hover {
+  background-color: #3b8ac2;
+}
+
+.explore-icon-circle {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    flex: 0 0 85%;
+    min-width: 280px;
+    height: 420px;
+  }
+  .projects-header .title {
+    font-size: 2.2rem;
+  }
+  /* On mobile allow all overlays to show or just let them touch */
+  .project-card-top-action, 
+  .project-card-overlay {
+    opacity: 1;
+    transform: none;
+  }
+}

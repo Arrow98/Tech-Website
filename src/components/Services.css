@@ -1,0 +1,188 @@
+/* ============================================
+   SERVICES SECTION matching exact screenshot
+   ============================================ */
+.services-section {
+  padding: 100px 0;
+  background-color: var(--bg-white);
+}
+
+.services-wrapper {
+  position: relative;
+  background: linear-gradient(135deg, #d8ecf8 0%, #ffffff 50%, #d8ecf8 100%);
+  border-radius: 20px;
+  padding: 80px 20px 100px 20px;
+  overflow: hidden;
+  margin-left: -110px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+  width: 120%;
+}
+
+.services-blob-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 180px;
+  background-color: #54a9df;
+  border-bottom-right-radius: 100%;
+  z-index: 1;
+}
+
+.services-blob-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background-color: #54a9df;
+  border-top-left-radius: 100%;
+  z-index: 1;
+}
+
+.services-header {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 90px;
+}
+
+.services-subtitle {
+  color: #54a9df;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.services-header .services-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 16px;
+}
+
+.services-desc {
+  color: #8c9baf;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 5;
+  width: 80%;
+  margin-left: 100px;
+}
+
+/* Card Styling */
+.service-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.9);
+  border-radius: 24px;
+  padding: 56px 30px 40px 30px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 44px; /* Space for the overlapping icon box */
+}
+
+/* Make the center card brighter based on the gradient illusion / design focus */
+.service-card:nth-child(2) {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: white;
+}
+
+/* Overlapping Icon Wrapper simulating the tab cutout */
+.service-icon-wrapper {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white; /* Matches the card look, or solid white to stand out */
+  border-radius: 20px;
+  padding: 8px; /* Thick white border effect separating blue icon from everything else */
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.03); 
+}
+
+/* Center card icon wrapper should also match */
+.service-card:nth-child(2) .service-icon-wrapper {
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+}
+
+.service-icon-inner {
+  width: 68px;
+  height: 68px;
+  background-color: #54a9df;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 16px;
+}
+
+.service-desc {
+  color: #8c9baf;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 250px;
+}
+
+.service-btn {
+  background-color: #54a9df;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* Hover effects applied via Framer Motion for button */
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 80px; 
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-wrapper {
+    padding: 60px 24px 80px 24px;
+    border-radius: 24px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    row-gap: 70px;
+  }
+  .services-blob-br {
+    width: 150px;
+    height: 150px;
+  }
+  .services-header .services-title {
+    font-size: 2.2rem;
+  }
+}
