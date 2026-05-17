@@ -173,10 +173,14 @@
   .services-wrapper {
     padding: 60px 24px 80px 24px;
     border-radius: 24px;
+    margin-left: 0; /* Resetting user's manual offset */
+    width: 100%;    /* Resetting user's manual offset */
   }
   .services-grid {
     grid-template-columns: 1fr;
     row-gap: 70px;
+    margin-left: 0; /* Resetting user's manual offset */
+    width: 100%;    /* Resetting user's manual offset */
   }
   .services-blob-br {
     width: 150px;
