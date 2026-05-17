@@ -1,61 +1,89 @@
+/* ============================================
+   ANALYTICS SECTION MATCHING SCREENSHOT
+   ============================================ */
+.analytics-section {
+  background-color: white; /* Clean white background */
+}
+
 .analytics-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  gap: 80px;
   align-items: center;
 }
 
+/* LEFT SIDE - Content */
 .analytics-content {
-  max-width: 520px;
+  max-width: 540px;
 }
 
 .analytics-subtitle {
-  color: var(--primary-blue);
-  font-weight: 600;
+  color: #55a0d3; /* Standard primary blue match */
+  font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 14px;
-  font-size: 0.85rem;
-  letter-spacing: 1.5px;
+  letter-spacing: 2.5px;
+  font-size: clamp(0.75rem, 1.5vw, 0.8rem);
+  margin-bottom: 16px;
 }
 
 .analytics-title {
-  font-size: 2.4rem;
+  font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 800;
-  color: var(--dark-navy);
-  margin-bottom: 40px;
-  line-height: 1.2;
+  color: #171717; /* Very dark charcoal */
+  margin-bottom: 50px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
 }
 
-.benefits-list {
+/* Text overlay matching UI glitch/blur suffix */
+.analytics-text-overlay {
+  opacity: 0.3;
+  filter: blur(0.5px);
+  position: relative;
+  margin-left: -5px;
+}
+
+/* Features List */
+.analytics-features-list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
 }
 
-.benefit-item {
+.analytics-feature-item {
   display: flex;
-  gap: 20px;
   align-items: flex-start;
+  gap: 24px;
 }
 
-.benefit-icon {
-  margin-top: 2px;
+.analytics-feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #ecf3fa; /* Soft blue background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #55a0d3; /* Solid blue icon */
   flex-shrink: 0;
+  margin-top: 4px; /* Align visually with header text */
 }
 
-.benefit-text h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--dark-navy);
-  margin-bottom: 6px;
+.analytics-feature-text h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #171717;
+  margin-bottom: 8px;
 }
 
-.benefit-text p {
-  color: var(--text-gray);
-  line-height: 1.6;
+.analytics-feature-text p {
+  color: #8c9baf; /* Grey text */
   font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
+/* RIGHT SIDE - Image with CSS Blur Effect */
 .analytics-image-wrapper {
   position: relative;
   width: 100%;
@@ -63,37 +91,43 @@
 
 .analytics-img {
   width: 100%;
-  height: 460px;
+  height: auto;
+  max-height: 600px;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  border-radius: 4px; /* Very subtle rounding as per screenshot */
+  display: block;
 }
 
+/* Bottom white overlay to fade the image */
+.analytics-img-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px; /* Strong fade area */
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 @media (max-width: 992px) {
   .analytics-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 60px;
   }
   .analytics-content {
     max-width: 100%;
-    text-align: center;
-  }
-  .benefit-item {
-    text-align: left;
-  }
-  .analytics-title {
-    font-size: 2rem;
-  }
-  .analytics-img {
-    height: 340px;
   }
 }
 
-@media (max-width: 600px) {
-  .analytics-title {
-    font-size: 1.7rem;
+@media (max-width: 768px) {
+  .analytics-feature-item {
+    gap: 16px;
   }
-  .analytics-img {
-    height: 250px;
+  .analytics-feature-icon {
+    width: 50px;
+    height: 50px;
   }
 }
