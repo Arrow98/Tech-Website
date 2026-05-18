@@ -9,8 +9,17 @@ const Header = () => {
     <header className="header">
       <div className="container header-container">
         <div className="logo">
-          <Hexagon className="logo-icon" size={28} />
-          <span className="logo-text">IT.Solu</span>
+          <div className="logo-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#54A9DF"/>
+              <path d="M10 11H20" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+              <circle cx="20" cy="11" r="2.5" fill="white"/>
+              <path d="M15 11V24" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+              <path d="M15 18H20" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+              <circle cx="20" cy="18" r="2.5" fill="white"/>
+            </svg>
+          </div>
+          <span className="logo-text">Tekly</span>
         </div>
 
         {/* Desktop nav */}
