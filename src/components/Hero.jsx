@@ -3,16 +3,16 @@ import { ArrowLeft, ArrowRight, Rocket, BarChart2, Megaphone, Phone } from 'luci
 import './Hero.css';
 
 const images = [
-  '/hero.png',
-  '/about.png',
-  '/analytics.png'
+  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1280&h=720&fit=crop',
+  'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1280&h=720&fit=crop',
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1280&h=720&fit=crop'
 ];
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    // Switch images exactly every 2 seconds
+    // Switch images exactly every 5 seconds
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % images.length);
     }, 5000);

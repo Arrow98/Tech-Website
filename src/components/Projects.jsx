@@ -4,22 +4,22 @@ import './Projects.css';
 
 const projects = [
   { 
-    img: '/hero.png', 
+    img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop', 
     title: 'Advanced Threat Protection Development', 
     desc: 'The Advanced Threat Protection (ATP) Suite Development project focuses on creating a robust and comprehensive...' 
   },
   { 
-    img: '/about.png', 
+    img: 'https://images.unsplash.com/photo-1551288049-bbbda54127c7?w=800&h=600&fit=crop', 
     title: 'Financial Dashboard Infrastructure', 
     desc: 'A cutting-edge financial dashboard designed for modern enterprise operations with real-time data.' 
   },
   { 
-    img: '/analytics.png', 
+    img: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop', 
     title: 'Data Analytics Platform', 
     desc: 'Real-time data visualization and processing engine for large scale metrics and business intelligence.' 
   },
   { 
-    img: '/team2.png', 
+    img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop', 
     title: 'Cloud Systems Migration', 
     desc: 'Seamless transition of legacy architecture to scalable distributed cloud networks with zero downtime.' 
   }
